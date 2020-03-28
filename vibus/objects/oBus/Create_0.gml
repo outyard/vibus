@@ -14,6 +14,6 @@ audio_sound_gain(busSound, 0.2, 0);
 
 points = 0;
 pointsAwardTimer = 0;
-timeLeft = 5 * 60 * 60;
+timeLeft = 3 * 60 * 60;
 
 gameOver = false;
