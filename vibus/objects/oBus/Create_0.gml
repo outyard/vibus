@@ -17,3 +17,5 @@ pointsAwardTimer = 0;
 timeLeft = 3 * 60 * 60;
 
 gameOver = false;
+
+carryingDeceasePoints = 0;

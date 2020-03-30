@@ -5,7 +5,7 @@ if (state == PassengerState.Boarding) {
 	if (abs(x - oBusMiddle.x) < random(5)) {
 		state = PassengerState.ChoosingSeat;
 	} else {
-		x += spd;
+		x = shift_towards_value(x, spd, oBusMiddle.x);
 	}
 }
 if (state == PassengerState.ChoosingSeat) {
@@ -69,6 +69,10 @@ if (sick) {
 		coughing = true;
 		coughTimer = 0;
 	}
+	
+	if (sickness < 0.5) {
+		sickness+= 1/120;	
+	}
 }
 
 if (coughing) {
@@ -81,7 +85,7 @@ if (coughing) {
 			if (id == other.id) {
 				continue;	
 			}
-			var _dist = (5+point_distance(x, y, other.x, other.y))/100;
+			var _dist = (5+point_distance(x, y+10, other.x, other.y))/100;
 			
 			if (random(1) > _dist) {
 				sick = true;

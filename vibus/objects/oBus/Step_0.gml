@@ -18,24 +18,36 @@ if (gameOver) {
 	}
 }
 
+show_debug_message(mouse_x);
+show_debug_message(mouse_y)
+
 if (pointsAwardTimer >= 120) {
 	pointsAwardTimer = 0;
 	
 	var _addition = 0;
+	var _subtraction = 0;
 	
 	with oPassenger {
+		_addition += 10;
 		if (sick) {
-			_addition -= 10;	
-		} else {
-			_addition += 10;	
+			_subtraction += sickness*20;	
 		}
 	}
 	
-	_addition = max(0, _addition);
-	_addition = round(_addition * random_range(0.66, 1.5));
+	var _mod = random_range(0.66, 1.5);
+	_addition = round(_addition * _mod);
+	carryingDeceasePoints = round(_subtraction * _mod);
+	
+	carryingDeceasePoints = min(carryingDeceasePoints, _addition);
 	
 	points += _addition;
-	script_create_score_message("+" + string(_addition) + " : busdriving", _addition > 0 ? ColorGoodMessage : c_white)
+	script_create_score_message("+" + string(_addition) + " : bus driving", _addition > 0 ? ColorGoodMessage : c_white)
+}
+if ((pointsAwardTimer) == 30) {
+	if (carryingDeceasePoints > 0) {
+		points -= carryingDeceasePoints;
+		script_create_score_message("-" + string(carryingDeceasePoints) + " : carrying decease", ColorBadMessage)
+	}
 }
 
 if (!onStop) {
@@ -92,7 +104,7 @@ if (onStop) {
 				busSound = audio_play_sound(sndBus, 0, true);
 				audio_sound_gain(busSound, 0, 0);
 				audio_sound_gain(busSound, 0.2, 1000);
-				timeTillNextStop = irandom_range(20, 30) * 60;
+				timeTillNextStop = irandom_range(20, 25) * 60;
 				
 				// Clamp it to victory screen so we always get victory right on a stop
 				timeTillNextStop = min(timeLeft, timeTillNextStop);

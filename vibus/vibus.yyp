@@ -143,6 +143,14 @@
             }
         },
         {
+            "Key": "4261197c-a55a-49fb-a74d-198980c60786",
+            "Value": {
+                "id": "52f9ee8b-cded-47a0-863e-ccf6f9ec3d3e",
+                "resourcePath": "rooms\\room_init\\room_init.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "428c1ddc-1e7c-41f0-8ae0-a31b139a30ad",
             "Value": {
                 "id": "443b17a5-1f2f-47c0-9c93-0f2a3a35f0eb",
@@ -532,6 +540,14 @@
                 "id": "0ec8c952-19e1-4808-a588-016eb18b4f5b",
                 "resourcePath": "scripts\\ease_quadInOut\\ease_quadInOut.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f3e4f9f2-1c67-47f4-bbf6-99da878e57ae",
+            "Value": {
+                "id": "8a8daedd-6dd7-4ebf-bc00-331aec05bcd9",
+                "resourcePath": "objects\\oInit\\oInit.yy",
+                "resourceType": "GMObject"
             }
         },
         {
