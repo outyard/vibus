@@ -18,4 +18,4 @@ timeLeft = 3 * 60 * 60;
 
 gameOver = false;
 
-carryingDeceasePoints = 0;
+carryingDiseasePoints = 0;

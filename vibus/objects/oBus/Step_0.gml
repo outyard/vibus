@@ -18,8 +18,6 @@ if (gameOver) {
 	}
 }
 
-show_debug_message(mouse_x);
-show_debug_message(mouse_y)
 
 if (pointsAwardTimer >= 120) {
 	pointsAwardTimer = 0;
@@ -36,17 +34,17 @@ if (pointsAwardTimer >= 120) {
 	
 	var _mod = random_range(0.66, 1.5);
 	_addition = round(_addition * _mod);
-	carryingDeceasePoints = round(_subtraction * _mod);
+	carryingDiseasePoints = round(_subtraction * _mod);
 	
-	carryingDeceasePoints = min(carryingDeceasePoints, _addition);
+	carryingDiseasePoints = min(carryingDiseasePoints, _addition);
 	
 	points += _addition;
 	script_create_score_message("+" + string(_addition) + " : bus driving", _addition > 0 ? ColorGoodMessage : c_white)
 }
 if ((pointsAwardTimer) == 30) {
-	if (carryingDeceasePoints > 0) {
-		points -= carryingDeceasePoints;
-		script_create_score_message("-" + string(carryingDeceasePoints) + " : carrying decease", ColorBadMessage)
+	if (carryingDiseasePoints > 0) {
+		points -= carryingDiseasePoints;
+		script_create_score_message("-" + string(carryingDiseasePoints) + " : carrying disease", ColorBadMessage)
 	}
 }
 
